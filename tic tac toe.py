@@ -1,13 +1,14 @@
 import random
 import os
 
+
 positions=["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
 marker=["X", "O", "x", "o"]
 
 board_numbers="_ _ _ _ _ _ _\n|   |   |   |\n|_7_|_8_|_9_|\n|   |   |   |\n|_4_|_5_|_6_|\n|   |   |   |\n|_1_|_2_|_3_|"
 
-board=list(board_numbers.split(" "))
+
 
 print(board_numbers)
 print("\nHello. Welcome to tick tack toe game.\nNumbers on above board are positions. When asked for position, type in number from the board. Each position can be picked only once.\n")
@@ -19,6 +20,7 @@ while player_marker not in marker:
 
 def player_X():
   global board_numbers
+  global count
   player=input('\nPlace your marker "X" on the board: ')
   if player in board_numbers and player in positions:
     board_numbers=(board_numbers.replace(player, "X"))
@@ -26,10 +28,13 @@ def player_X():
     while player not in board_numbers or player not in positions:
       player=input("type in proper number: ")
     board_numbers=(board_numbers.replace(player, "X"))
+  count=count+1
   print(board_numbers)
+  
 
 def player_O():
   global board_numbers
+  global count
   player=input('\nPlace your marker "O" on the board: ')
   if player in board_numbers and player in positions:
     board_numbers=(board_numbers.replace(player, "O"))
@@ -37,10 +42,13 @@ def player_O():
     while player not in board_numbers or player not in positions:
       player=input("type in proper number: ")
     board_numbers=(board_numbers.replace(player, "O"))
+  count=count+1
   print(board_numbers)
+  
 
 def computer_X():
   global board_numbers
+  global count
   computer=random.choice(positions)
   if computer in board_numbers:
     board_numbers=(board_numbers.replace(computer, "X"))
@@ -48,10 +56,13 @@ def computer_X():
     while computer not in board_numbers:
       computer=random.choice(positions)
     board_numbers=(board_numbers.replace(computer, "X"))
+  count=count+1
   print(board_numbers)
+  
   
 def computer_O():
   global board_numbers
+  global count
   computer=random.choice(positions)
   if computer in board_numbers:
     board_numbers=(board_numbers.replace(computer, "O"))
@@ -59,8 +70,20 @@ def computer_O():
     while computer not in board_numbers:
       computer=random.choice(positions)
     board_numbers=(board_numbers.replace(computer, "O"))
+  count=count+1
   print(board_numbers)
+  
 
+count=0
+def draw():
+  global game
+  global count
+  if count==9 and game==True:
+    os.system('clear')
+    print(board_numbers)
+    print ("It's a draw")
+    game=False
+    
 
 """
 chars = []
@@ -188,6 +211,8 @@ print(chars.index("9"))
 
 
 
+    
+
 game=True
 
 while game:
@@ -200,21 +225,37 @@ while game:
       win_x()
       if game==False:
         break
+      draw()
+      if count==9:
+        break
       computer_O()
       win_o()
       if game==False:
         break
+      draw()
+      if count==9:
+        break
 
-    else:
+
+    elif player_marker=="O" or player_marker=="o":
       os.system('clear')
       computer_X()
       win_x()
       if game==False:
         break
+      draw()
+      if count==9:
+        break
       player_O()
       win_o()
       if game==False:
         break
+      draw()
+      if count==9:
+        break
+          
+    
+        
     
     
    
