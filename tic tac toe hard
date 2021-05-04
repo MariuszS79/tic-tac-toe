@@ -54,7 +54,7 @@ def player_O():
   count=count+1
   print(board_numbers)
   
-#computer's random move if plays with X
+#computer's move if plays with X
 def computer_X():
   global board_numbers
   global count
@@ -68,7 +68,7 @@ def computer_X():
   count=count+1
   print(board_numbers)
   
-#computer's random move if plays with O
+#computer's move if plays with O
 def computer_O():
   global board_numbers
   global count
