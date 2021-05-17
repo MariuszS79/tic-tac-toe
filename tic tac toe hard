@@ -59,12 +59,15 @@ def computer_X():
   global board_numbers
   global count
   computer=random.choice(positions)
-  if computer in board_numbers:
-    board_numbers=(board_numbers.replace(computer, "X"))
-  elif computer not in board_numbers:
-    while computer not in board_numbers:
-      computer=random.choice(positions)
-    board_numbers=(board_numbers.replace(computer, "X"))
+  if count==0:
+    board_numbers=(board_numbers.replace("7", "X"))
+  else:
+    if computer in board_numbers:
+      board_numbers=(board_numbers.replace(computer, "X"))
+    elif computer not in board_numbers:
+      while computer not in board_numbers:
+        computer=random.choice(positions)
+      board_numbers=(board_numbers.replace(computer, "X"))
   count=count+1
   print(board_numbers)
   
@@ -73,12 +76,17 @@ def computer_O():
   global board_numbers
   global count
   computer=random.choice(positions)
-  if computer in board_numbers:
-    board_numbers=(board_numbers.replace(computer, "O"))
-  elif computer not in board_numbers:
-    while computer not in board_numbers:
-      computer=random.choice(positions)
-    board_numbers=(board_numbers.replace(computer, "O"))
+  if count==1 and "5" in board_numbers:
+    board_numbers=(board_numbers.replace("5", "O"))
+  elif count==1 and "5" not in board_numbers:
+    board_numbers=(board_numbers.replace("9", "O"))
+  else:
+    if computer in board_numbers:
+      board_numbers=(board_numbers.replace(computer, "O"))
+    elif computer not in board_numbers:
+      while computer not in board_numbers:
+        computer=random.choice(positions)
+      board_numbers=(board_numbers.replace(computer, "O"))
   count=count+1
   print(board_numbers)
   
@@ -214,7 +222,7 @@ def win_o():
 def play_again():
   global game
   global loop
-  again=input("Would you like to play again?y/n: ")
+  again=input("Would you like to play again? y/n: ")
   if again=="y" or again=="Y":
     game=True
   else: 
@@ -272,7 +280,17 @@ while loop:
   
 
     
- 
+          
+    
+        
+    
+    
+   
+      
+    
+    
+    
+    
   
 
 
