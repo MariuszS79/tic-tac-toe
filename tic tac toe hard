@@ -59,9 +59,121 @@ def computer_X():
   global board_numbers
   global count
   computer=random.choice(positions)
+  
+  #move 1
   if count==0:
     board_numbers=(board_numbers.replace("7", "X"))
+  
+  #move 2
+  elif count==2 and "5" not in board_numbers:
+    board_numbers=(board_numbers.replace("9", "X"))
+  
+  #move 3
+  elif count==4 and board_numbers[62]=="O" and board_numbers[34]=="O" and "2" in board_numbers:
+    board_numbers=(board_numbers.replace("2", "X"))
+  elif count==4 and board_numbers[62]=="O" and board_numbers[90]=="O" and "8" in board_numbers:
+    board_numbers=(board_numbers.replace("8", "X"))
+  elif count==4 and board_numbers[62]=="O" and board_numbers[66]=="O" and "4" in board_numbers:
+    board_numbers=(board_numbers.replace("4", "X"))
+  elif count==4 and board_numbers[62]=="O" and board_numbers[58]=="O" and "6" in board_numbers:
+    board_numbers=(board_numbers.replace("6", "X"))
+  elif count==4 and board_numbers[30]=="O" and board_numbers[34]=="O" and "9" in board_numbers:
+    board_numbers=(board_numbers.replace("9", "X"))
+  elif count==4 and board_numbers[38]=="O" and board_numbers[34]=="O" and "7" in board_numbers:
+    board_numbers=(board_numbers.replace("7", "X"))
+  elif count==4 and board_numbers[86]=="O" and board_numbers[90]=="O" and "3" in board_numbers:
+    board_numbers=(board_numbers.replace("3", "X"))
+  elif count==4 and board_numbers[90]=="O" and board_numbers[94]=="O" and "1" in board_numbers:
+    board_numbers=(board_numbers.replace("1", "X"))
+  elif count==4 and board_numbers[30]=="O" and board_numbers[58]=="O" and "1" in board_numbers:
+    board_numbers=(board_numbers.replace("1", "X"))
+  elif count==4 and board_numbers[58]=="O" and board_numbers[86]=="O" and "7" in board_numbers:
+    board_numbers=(board_numbers.replace("7", "X"))
+  elif count==4 and board_numbers[38]=="O" and board_numbers[66]=="O" and "3" in board_numbers:
+    board_numbers=(board_numbers.replace("3", "X"))
+  elif count==4 and board_numbers[66]=="O" and board_numbers[94]=="O" and "9" in board_numbers:
+    board_numbers=(board_numbers.replace("9", "X"))
+  elif count==4 and board_numbers[30]=="O" and board_numbers[62]=="O" and "3" in board_numbers:
+    board_numbers=(board_numbers.replace("3", "X"))
+  elif count==4 and board_numbers[62]=="O" and board_numbers[94]=="O" and "7" in board_numbers:
+    board_numbers=(board_numbers.replace("7", "X"))
+  elif count==4 and board_numbers[62]=="O" and board_numbers[38]=="O" and "1" in board_numbers:
+    board_numbers=(board_numbers.replace("1", "X"))
+  elif count==4 and board_numbers[62]=="O" and board_numbers[86]=="O" and "9" in board_numbers:
+    board_numbers=(board_numbers.replace("9", "X"))
+  elif count==4 and board_numbers[30]=="O" and board_numbers[38]=="O" and "8" in board_numbers:
+    board_numbers=(board_numbers.replace("8", "X"))
+  elif count==4 and board_numbers[58]=="O" and board_numbers[66]=="O" and "5" in board_numbers:
+    board_numbers=(board_numbers.replace("5", "X"))
+  elif count==4 and board_numbers[86]=="O" and board_numbers[94]=="O" and "2" in board_numbers:
+    board_numbers=(board_numbers.replace("2", "X"))
+  elif count==4 and board_numbers[30]=="O" and board_numbers[86]=="O" and "4" in board_numbers:
+    board_numbers=(board_numbers.replace("4", "X"))
+  elif count==4 and board_numbers[34]=="O" and board_numbers[90]=="O" and "5" in board_numbers:
+    board_numbers=(board_numbers.replace("5", "X"))
+  elif count==4 and board_numbers[38]=="O" and board_numbers[94]=="O" and "6" in board_numbers:
+    board_numbers=(board_numbers.replace("6", "X"))
+  elif count==4 and board_numbers[38]=="O" and board_numbers[86]=="O" and "5" in board_numbers:
+    board_numbers=(board_numbers.replace("5", "X"))
+  elif count==4 and board_numbers[30]=="O" and board_numbers[94]=="O" and "5" in board_numbers:
+    board_numbers=(board_numbers.replace("5", "X"))
+  elif count==4 and board_numbers[62]=="O":
+    board_numbers=(board_numbers.replace("9", "X"))
+  
+
+#move 4
+  elif count==6 and board_numbers[62]=="O" and board_numbers[34]=="O" and "2" in board_numbers:
+    board_numbers=(board_numbers.replace("2", "X"))
+  elif count==6 and board_numbers[62]=="O" and board_numbers[90]=="O" and "8" in board_numbers:
+    board_numbers=(board_numbers.replace("8", "X"))
+  elif count==6 and board_numbers[62]=="O" and board_numbers[66]=="O" and "4" in board_numbers:
+    board_numbers=(board_numbers.replace("4", "X"))
+  elif count==6 and board_numbers[62]=="O" and board_numbers[58]=="O" and "6" in board_numbers:
+    board_numbers=(board_numbers.replace("6", "X"))
+  elif count==6 and board_numbers[30]=="O" and board_numbers[34]=="O" and "9" in board_numbers:
+    board_numbers=(board_numbers.replace("9", "X"))
+  elif count==6 and board_numbers[38]=="O" and board_numbers[34]=="O" and "7" in board_numbers:
+    board_numbers=(board_numbers.replace("7", "X"))
+  elif count==6 and board_numbers[86]=="O" and board_numbers[90]=="O" and "3" in board_numbers:
+    board_numbers=(board_numbers.replace("3", "X"))
+  elif count==6 and board_numbers[90]=="O" and board_numbers[94]=="O" and "1" in board_numbers:
+    board_numbers=(board_numbers.replace("1", "X"))
+  elif count==6 and board_numbers[30]=="O" and board_numbers[58]=="O" and "1" in board_numbers:
+    board_numbers=(board_numbers.replace("1", "X"))
+  elif count==6 and board_numbers[58]=="O" and board_numbers[86]=="O" and "7" in board_numbers:
+    board_numbers=(board_numbers.replace("7", "X"))
+  elif count==6 and board_numbers[38]=="O" and board_numbers[66]=="O" and "3" in board_numbers:
+    board_numbers=(board_numbers.replace("3", "X"))
+  elif count==6 and board_numbers[66]=="O" and board_numbers[94]=="O" and "9" in board_numbers:
+    board_numbers=(board_numbers.replace("9", "X"))
+  elif count==6 and board_numbers[30]=="O" and board_numbers[62]=="O" and "3" in board_numbers:
+    board_numbers=(board_numbers.replace("3", "X"))
+  elif count==6 and board_numbers[62]=="O" and board_numbers[94]=="O" and "7" in board_numbers:
+    board_numbers=(board_numbers.replace("7", "X"))
+  elif count==6 and board_numbers[62]=="O" and board_numbers[38]=="O" and "1" in board_numbers:
+    board_numbers=(board_numbers.replace("1", "X"))
+  elif count==6 and board_numbers[62]=="O" and board_numbers[86]=="O" and "9" in board_numbers:
+    board_numbers=(board_numbers.replace("9", "X"))
+  elif count==6 and board_numbers[30]=="O" and board_numbers[38]=="O" and "8" in board_numbers:
+    board_numbers=(board_numbers.replace("8", "X"))
+  elif count==6 and board_numbers[58]=="O" and board_numbers[66]=="O" and "5" in board_numbers:
+    board_numbers=(board_numbers.replace("5", "X"))
+  elif count==6 and board_numbers[86]=="O" and board_numbers[94]=="O" and "2" in board_numbers:
+    board_numbers=(board_numbers.replace("2", "X"))
+  elif count==6 and board_numbers[30]=="O" and board_numbers[86]=="O" and "4" in board_numbers:
+    board_numbers=(board_numbers.replace("4", "X"))
+  elif count==6 and board_numbers[34]=="O" and board_numbers[90]=="O" and "5" in board_numbers:
+    board_numbers=(board_numbers.replace("5", "X"))
+  elif count==6 and board_numbers[38]=="O" and board_numbers[94]=="O" and "6" in board_numbers:
+    board_numbers=(board_numbers.replace("6", "X"))
+  elif count==6 and board_numbers[38]=="O" and board_numbers[86]=="O" and "5" in board_numbers:
+    board_numbers=(board_numbers.replace("5", "X"))
+  elif count==6 and board_numbers[30]=="O" and board_numbers[94]=="O" and "5" in board_numbers:
+    board_numbers=(board_numbers.replace("5", "X"))
+
+
   else:
+    computer=random.choice(positions)
     if computer in board_numbers:
       board_numbers=(board_numbers.replace(computer, "X"))
     elif computer not in board_numbers:
@@ -276,21 +388,3 @@ while loop:
 
   play_again()
   continue
-
-  
-
-    
-          
-    
-        
-    
-    
-   
-      
-    
-    
-    
-    
-  
-
-
