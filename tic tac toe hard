@@ -53,20 +53,25 @@ def player_O():
     board_numbers=(board_numbers.replace(player, "O"))
   count=count+1
   print(board_numbers)
-  
+
+corners=[board_numbers[30], board_numbers[38], board_numbers[86], board_numbers[94]]
+
 #computer's move if plays with X
 def computer_X():
   global board_numbers
   global count
   computer=random.choice(positions)
-  
+  corner=random.choice(corners)
   #move 1
   if count==0:
-    board_numbers=(board_numbers.replace("7", "X"))
+    board_numbers=(board_numbers.replace(corner, "X"))
   
   #move 2
   elif count==2 and "5" not in board_numbers:
-    board_numbers=(board_numbers.replace("9", "X"))
+    while corner=="X" or corner=="O":
+      corner=random.choice(corners)
+    board_numbers=(board_numbers.replace(corner, "X"))
+    
   
   #move 3
   elif count==4 and board_numbers[62]=="O" and board_numbers[34]=="O" and "2" in board_numbers:
@@ -494,5 +499,20 @@ while loop:
   play_again()
   continue
 
- 
+  
+
+    
+          
+    
+        
+    
+    
+   
+      
+    
+    
+    
+    
+  
+
 
