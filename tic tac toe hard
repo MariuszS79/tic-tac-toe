@@ -54,23 +54,77 @@ def player_O():
   count=count+1
   print(board_numbers)
 
-corners=["7", "9", "1", "3"]
+corners=[board_numbers[30], board_numbers[38], board_numbers[86], board_numbers[94]]
 
 #computer's move if plays with X
 def computer_X():
   global board_numbers
   global count
+  global corners
   computer=random.choice(positions)
   corner=random.choice(corners)
+  
+  #2 are in a row so ad 3rd
+  if board_numbers[30]=="X" and board_numbers[34]=="X" and "9" in board_numbers:
+    board_numbers=(board_numbers.replace("9", "X"))
+  elif board_numbers[38]=="X" and board_numbers[34]=="X" and "7" in board_numbers:
+    board_numbers=(board_numbers.replace("7", "X"))
+  elif board_numbers[30]=="X" and board_numbers[38]=="X" and "8" in board_numbers:
+    board_numbers=(board_numbers.replace("8", "X"))
+  elif board_numbers[58]=="X" and board_numbers[62]=="X" and "6" in board_numbers:
+    board_numbers=(board_numbers.replace("6", "X"))
+  elif board_numbers[62]=="X" and board_numbers[66]=="X" and "4" in board_numbers:
+    board_numbers=(board_numbers.replace("4", "X"))
+  elif board_numbers[58]=="X" and board_numbers[66]=="X" and "5" in board_numbers:
+    board_numbers=(board_numbers.replace("5", "X"))
+  elif board_numbers[86]=="X" and board_numbers[90]=="X" and "3" in board_numbers:
+    board_numbers=(board_numbers.replace("3", "X"))
+  elif board_numbers[90]=="X" and board_numbers[94]=="X" and "1" in board_numbers:
+    board_numbers=(board_numbers.replace("1", "X"))
+  elif board_numbers[86]=="X" and board_numbers[94]=="X" and "2" in board_numbers:
+    board_numbers=(board_numbers.replace("2", "X"))
+  elif board_numbers[30]=="X" and board_numbers[62]=="X" and "3" in board_numbers:
+    board_numbers=(board_numbers.replace("3", "X"))
+  elif board_numbers[30]=="X" and board_numbers[94]=="X" and "5" in board_numbers:
+    board_numbers=(board_numbers.replace("5", "X"))
+  elif board_numbers[62]=="X" and board_numbers[94]=="X" and "7" in board_numbers:
+    board_numbers=(board_numbers.replace("7", "X"))
+  elif board_numbers[38]=="X" and board_numbers[62]=="X" and "1" in board_numbers:
+    board_numbers=(board_numbers.replace("1", "X"))
+  elif board_numbers[86]=="X" and board_numbers[38]=="X" and "5" in board_numbers:
+    board_numbers=(board_numbers.replace("5", "X"))
+  elif board_numbers[86]=="X" and board_numbers[62]=="X" and "9" in board_numbers:
+    board_numbers=(board_numbers.replace("9", "X"))
+  elif board_numbers[30]=="X" and board_numbers[58]=="X" and "1" in board_numbers:
+    board_numbers=(board_numbers.replace("1", "X"))
+  elif board_numbers[58]=="X" and board_numbers[86]=="X" and "7" in board_numbers:
+    board_numbers=(board_numbers.replace("7", "X"))
+  elif board_numbers[30]=="X" and board_numbers[86]=="X" and "4" in board_numbers:
+    board_numbers=(board_numbers.replace("4", "X"))
+  elif board_numbers[34]=="X" and board_numbers[62]=="X" and "2" in board_numbers:
+    board_numbers=(board_numbers.replace("2", "X"))
+  elif board_numbers[62]=="X" and board_numbers[90]=="X" and "8" in board_numbers:
+    board_numbers=(board_numbers.replace("8", "X"))
+  elif board_numbers[34]=="X" and board_numbers[90]=="X" and "5" in board_numbers:
+    board_numbers=(board_numbers.replace("5", "X"))
+  elif board_numbers[38]=="X" and board_numbers[66]=="X" and "3" in board_numbers:
+    board_numbers=(board_numbers.replace("3", "X"))
+  elif board_numbers[38]=="X" and board_numbers[94]=="X" and "6" in board_numbers:
+    board_numbers=(board_numbers.replace("6", "X"))
+  elif board_numbers[66]=="X" and board_numbers[94]=="X" and "9" in board_numbers:
+    board_numbers=(board_numbers.replace("9", "X"))
+  
   #move 1
   if count==0:
     board_numbers=(board_numbers.replace(corner, "X"))
-  
+  #------------here something keeps picking same corner twice sometimes, to be fixed
   #move 2
   elif count==2 and "5" not in board_numbers:
+ 
     while corner=="X" or corner=="O":
       corner=random.choice(corners)
-    board_numbers=(board_numbers.replace(corner, "X"))
+    if corner=="1" or corner=="3" or corner=="7" or corner=="9":
+      board_numbers=(board_numbers.replace(corner, "X"))
     
   
   #move 3
@@ -193,8 +247,58 @@ def computer_O():
   computer=random.choice(positions)
   corner=random.choice(corners)
   
+  #2 are in a row so ad 3rd
+  if board_numbers[30]=="O" and board_numbers[34]=="O" and "9" in board_numbers:
+    board_numbers=(board_numbers.replace("9", "O"))
+  elif board_numbers[38]=="O" and board_numbers[34]=="O" and "7" in board_numbers:
+    board_numbers=(board_numbers.replace("7", "O"))
+  elif board_numbers[30]=="O" and board_numbers[38]=="O" and "8" in board_numbers:
+    board_numbers=(board_numbers.replace("8", "O"))
+  elif board_numbers[58]=="O" and board_numbers[62]=="O" and "6" in board_numbers:
+    board_numbers=(board_numbers.replace("6", "O"))
+  elif board_numbers[62]=="O" and board_numbers[66]=="O" and "4" in board_numbers:
+    board_numbers=(board_numbers.replace("4", "O"))
+  elif board_numbers[58]=="O" and board_numbers[66]=="O" and "5" in board_numbers:
+    board_numbers=(board_numbers.replace("5", "O"))
+  elif board_numbers[86]=="O" and board_numbers[90]=="O" and "3" in board_numbers:
+    board_numbers=(board_numbers.replace("3", "O"))
+  elif board_numbers[90]=="O" and board_numbers[94]=="O" and "1" in board_numbers:
+    board_numbers=(board_numbers.replace("1", "O"))
+  elif board_numbers[86]=="O" and board_numbers[94]=="O" and "2" in board_numbers:
+    board_numbers=(board_numbers.replace("2", "O"))
+  elif board_numbers[30]=="O" and board_numbers[62]=="O" and "3" in board_numbers:
+    board_numbers=(board_numbers.replace("3", "O"))
+  elif board_numbers[30]=="O" and board_numbers[94]=="O" and "5" in board_numbers:
+    board_numbers=(board_numbers.replace("5", "O"))
+  elif board_numbers[62]=="O" and board_numbers[94]=="O" and "7" in board_numbers:
+    board_numbers=(board_numbers.replace("7", "O"))
+  elif board_numbers[38]=="O" and board_numbers[62]=="O" and "1" in board_numbers:
+    board_numbers=(board_numbers.replace("1", "O"))
+  elif board_numbers[86]=="O" and board_numbers[38]=="O" and "5" in board_numbers:
+    board_numbers=(board_numbers.replace("5", "O"))
+  elif board_numbers[86]=="O" and board_numbers[62]=="O" and "9" in board_numbers:
+    board_numbers=(board_numbers.replace("9", "O"))
+  elif board_numbers[30]=="O" and board_numbers[58]=="O" and "1" in board_numbers:
+    board_numbers=(board_numbers.replace("1", "O"))
+  elif board_numbers[58]=="O" and board_numbers[86]=="O" and "7" in board_numbers:
+    board_numbers=(board_numbers.replace("7", "O"))
+  elif board_numbers[30]=="O" and board_numbers[86]=="O" and "4" in board_numbers:
+    board_numbers=(board_numbers.replace("4", "O"))
+  elif board_numbers[34]=="O" and board_numbers[62]=="O" and "2" in board_numbers:
+    board_numbers=(board_numbers.replace("2", "O"))
+  elif board_numbers[62]=="O" and board_numbers[90]=="O" and "8" in board_numbers:
+    board_numbers=(board_numbers.replace("8", "O"))
+  elif board_numbers[34]=="O" and board_numbers[90]=="O" and "5" in board_numbers:
+    board_numbers=(board_numbers.replace("5", "O"))
+  elif board_numbers[38]=="O" and board_numbers[66]=="O" and "3" in board_numbers:
+    board_numbers=(board_numbers.replace("3", "O"))
+  elif board_numbers[38]=="O" and board_numbers[94]=="O" and "6" in board_numbers:
+    board_numbers=(board_numbers.replace("6", "O"))
+  elif board_numbers[66]=="O" and board_numbers[94]=="O" and "9" in board_numbers:
+    board_numbers=(board_numbers.replace("9", "O"))
+
   #move 1
-  if count==1 and "5" in board_numbers:
+  elif count==1 and "5" in board_numbers:
     board_numbers=(board_numbers.replace("5", "O"))
   elif count==1 and "5" not in board_numbers:
     board_numbers=(board_numbers.replace(corner, "O"))
@@ -228,7 +332,7 @@ def computer_O():
     board_numbers=(board_numbers.replace("3", "O"))
   elif count==3 and board_numbers[62]=="X" and board_numbers[94]=="X" and "7" in board_numbers:
     board_numbers=(board_numbers.replace("7", "O"))
-  elif count==3 and board_numbers[62]=="X" and board_numbers[38]=="X" and "1" in board_numbers:
+  elif count==3 and board_numbers[62]=="X" and board_numbers[38]=="X" and "1" in board_numbers[86]:
     board_numbers=(board_numbers.replace("1", "O"))
   elif count==3 and board_numbers[62]=="X" and board_numbers[86]=="X" and "9" in board_numbers:
     board_numbers=(board_numbers.replace("9", "O"))
@@ -248,7 +352,7 @@ def computer_O():
     board_numbers=(board_numbers.replace("5", "O"))
   elif count==3 and board_numbers[30]=="X" and board_numbers[94]=="X" and "5" in board_numbers:
     board_numbers=(board_numbers.replace("5", "O"))
-  elif count==3 and board_numbers[62]=="X":
+  elif count==3 and board_numbers[62]=="X" and "9" in board_numbers:
     board_numbers=(board_numbers.replace("9", "O"))
 
   #move 3
@@ -501,3 +605,12 @@ while loop:
   continue
 
   
+
+    
+          
+    
+        
+    
+    
+   
+      
